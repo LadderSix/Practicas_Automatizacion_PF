@@ -1,0 +1,35 @@
+package Pages;
+
+import Base.BaseSelenium;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class HomePage extends BaseSelenium {
+    public HomePage(WebDriver driver){
+        super(driver);
+    }
+    //Centralizar los localizadores
+    By rut = By.name("username");
+    //By password = By.xpath("//*[@id=\"single-spa-application:@servipagFenix/home\"]/public-root/public-login/login-modal-login/div/div/form/section/div[2]/div/input");
+    By password = By.cssSelector("input[formcontrolname='password']");
+    By btnIngresar = By.xpath("/html/body/modal-container/div/div/login-modal-login/div/div[2]/form/section/button");
+    By btnMiServipag = By.xpath("//a[contains(text(),'Mi Servipag')]");
+
+    //Definir las acciones de la Página
+
+
+    public void btnMiServipag(){
+        click(esperaExplicita(btnMiServipag));
+        esperarXSegundos(1000);
+    }
+    public void iniciarSesion(String miRut,String pass){
+        agregarTexto(rut,miRut);
+        agregarTexto(password,pass);
+        click(esperaExplicita(btnIngresar));
+    }
+    public void getTituloPagina(){
+        getTituloPagina();
+    }
+
+}
