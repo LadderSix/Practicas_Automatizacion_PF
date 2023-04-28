@@ -10,9 +10,8 @@ import cucumber.api.CucumberOptions;
         glue = {"Steps"},
         plugin = {"pretty","html:test-output"},
         dryRun = false,
-        monochrome = true
-
-)
+        monochrome = true,
+        tags = "@PR-Mati-001")
 public class runners {
 
 }
